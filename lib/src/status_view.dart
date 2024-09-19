@@ -11,6 +11,7 @@ class StatusView extends StatelessWidget {
   final double strokeWidth;
   final Color seenColor;
   final Color unSeenColor;
+  final Color storyBgColor;
 
   StatusView(
       {this.numberOfStatus = 10,
@@ -21,7 +22,8 @@ class StatusView extends StatelessWidget {
       required this.centerImageUrl,
       this.strokeWidth = 4,
       this.seenColor = Colors.grey,
-      this.unSeenColor = Colors.blue})
+      this.unSeenColor = Colors.blue,
+      this.storyBgColor = Colors.blue})
       : assert(centerImageUrl != null, "Please provide centerImageUrl");
 
   @override
@@ -46,6 +48,7 @@ class StatusView extends StatelessWidget {
           CircleAvatar(
             radius: radius - padding,
             backgroundImage: NetworkImage(centerImageUrl),
+            backgroundColor: storyBgColor,
           ),
         ],
       ),
